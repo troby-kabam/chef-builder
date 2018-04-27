@@ -1,10 +1,13 @@
 TAG="k-kitchen:latest"
+BRANCH ?= "master"
 
 build:
+	git clone --branch $(BRANCH) ssh://git@github.com/explodingbarrel/sparx-cookbooks.git volumes/sparx-cookbooks/
 	docker build -t ${TAG} --force-rm .
 
 run:
-	docker run --rm -it ${TAG}
+	docker run --mount type=bind,source=${PWD}/volumes/sparx-cookbooks/cookbooks,target=/cookbooks --rm -it ${TAG}
 
 clean:
-	docker rmi ${TAG}
+	-docker rmi ${TAG}
+	-rm -rf volumes/sparx-cookbooks/
