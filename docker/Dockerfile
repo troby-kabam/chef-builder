@@ -12,7 +12,8 @@ RUN apt-get update -y && \
       wget \
       && \
     chmod a+x /bootstrap.sh && \
-    wget ${CHEFDK_URL}/${CHEFDK_PACKAGE} && \
+    wget -nv ${CHEFDK_URL}/${CHEFDK_PACKAGE} && \
+    echo "${CHEFDK_CHECKSUM}  ${CHEFDK_PACKAGE}" |shasum -a 256 -c - && \
     dpkg -i ${CHEFDK_PACKAGE} && \
     echo "export PS1='$? \u@\h \w\\$ '" >>/root/.bash_profile
 
