@@ -1,7 +1,8 @@
-Environments for Chef cookbook development.
+Environment for Chef cookbook development.
 This will clone 'sparx-cookbooks' to volumes/.
 
 USE
+ - cd docker/build
  - `env BRANCH=<branch name> make` to clone a target branch.
 
 COMMANDS

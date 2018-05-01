@@ -1,4 +1,4 @@
-This builds a Chef cookbook development environment using Ubuntu Trusty (14.04) on Docker.
+This builds a Chef cookbook development environment using ubuntu:latest.
 
 To update ChefDK:
  - Visit https://downloads.chef.io/chefdk and choose the correct download.
