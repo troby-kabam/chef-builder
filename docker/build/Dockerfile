@@ -9,6 +9,7 @@ RUN apt-get update -y && \
       chef-zero \
       docker.io \
       git \
+      vim \
       wget \
       && \
     wget -nv ${CHEFDK_URL}/${CHEFDK_PACKAGE} && \
