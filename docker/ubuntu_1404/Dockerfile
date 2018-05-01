@@ -18,6 +18,7 @@ RUN apt-get update -y && \
     echo "${CHEFDK_CHECKSUM}  ${CHEFDK_PACKAGE}" |shasum -a 256 -c - && \
     dpkg -i ${CHEFDK_PACKAGE} && \
     chef gem install kitchen-docker && \
+    rm -f ${CHEFDK_PACKAGE} /var/lib/apt/lists/*gz && \
     echo "export PS1='$? \u@\h \w\\$ '" >>/root/.bash_profile
 
 ENTRYPOINT /bootstrap.sh
