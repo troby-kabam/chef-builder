@@ -9,12 +9,15 @@ COPY bootstrap.sh /
 RUN apt-get update -y && \
     apt-get install -y \
       chef-zero \
+      docker.io \
+      git \
       wget \
       && \
     chmod a+x /bootstrap.sh && \
     wget -nv ${CHEFDK_URL}/${CHEFDK_PACKAGE} && \
     echo "${CHEFDK_CHECKSUM}  ${CHEFDK_PACKAGE}" |shasum -a 256 -c - && \
     dpkg -i ${CHEFDK_PACKAGE} && \
+    chef gem install kitchen-docker && \
     echo "export PS1='$? \u@\h \w\\$ '" >>/root/.bash_profile
 
 ENTRYPOINT /bootstrap.sh
