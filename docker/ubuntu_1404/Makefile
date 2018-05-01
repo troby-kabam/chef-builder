@@ -6,7 +6,7 @@ build:
 	git clone --branch $(BRANCH) ${COOKBOOK_REPO} ../volumes/sparx-cookbooks/
 	docker build -t ${TAG} --force-rm .
 
-run:
+run:build
 	docker run \
 	  --network host \
 	  --privileged=true \
