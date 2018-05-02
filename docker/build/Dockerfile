@@ -9,6 +9,7 @@ RUN apt-get update -y && \
       chef-zero \
       docker.io \
       git \
+      gnupg2 \
       vim \
       wget \
       && \

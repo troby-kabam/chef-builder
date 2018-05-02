@@ -13,6 +13,7 @@ run:
 	  -v /var/run/docker.sock:/var/run/docker.sock \
 	  -v ${HOME}/.gitconfig:/root/.gitconfig \
 	  --mount type=bind,source=${PWD}/../volumes/sparx-cookbooks,target=/cookbooks \
+          -v ${HOME}/.gnupg:/root/.gnupg \
 	  --rm -it ${TAG}
 
 lint:
