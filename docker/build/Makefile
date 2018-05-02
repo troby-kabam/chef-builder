@@ -12,7 +12,7 @@ run:
 	  --privileged=true \
 	  -v /var/run/docker.sock:/var/run/docker.sock \
 	  -v ${HOME}/.gitconfig:/root/.gitconfig \
-	  --mount type=bind,source=${PWD}/../volumes/sparx-cookbooks/cookbooks,target=/cookbooks \
+	  --mount type=bind,source=${PWD}/../volumes/sparx-cookbooks,target=/cookbooks \
 	  --rm -it ${TAG}
 
 lint:
