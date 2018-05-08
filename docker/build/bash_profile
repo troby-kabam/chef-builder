@@ -1,0 +1,2 @@
+export BRANCH=`cd /cookbooks && git branch --no-color |awk '{print $2}'`
+export PS1='$? \033[0;36m\u@chef-builder \033[1;32m$BRANCH \033[0;36m\w\033[0m\$ '
