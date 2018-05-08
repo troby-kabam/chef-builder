@@ -1,5 +1,5 @@
 TAG="k-kitchen:latest"
-BRANCH ?= "master"
+BRANCH ?= "rl10"
 COOKBOOK_REPO="ssh://git@github.com/explodingbarrel/sparx-cookbooks.git"
 
 build:
