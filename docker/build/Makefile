@@ -5,6 +5,11 @@ COOKBOOK_REPO="ssh://git@github.com/explodingbarrel/sparx-cookbooks.git"
 build:
 	git clone --branch $(BRANCH) ${COOKBOOK_REPO} ../volumes/sparx-cookbooks/
 	docker build -t ${TAG} --force-rm .
+	@echo "\n#########################################################"
+	@echo "# Your cookbook development environment has been built. #"
+	@echo "#         Type 'make run' to start the container.       #"
+	@echo "# Your cookbook repository can be found at /cookbooks.  #"
+	@echo "#########################################################\n"
 
 run:
 	docker run \
